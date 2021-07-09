@@ -20,8 +20,8 @@ yarn-debug.log*
 yarn-error.log*
 
 
-# build
-src/*
-public/*
-build/static/css/*.map
-build/static/js/*.map
+# # build
+# src/*
+# public/*
+# build/static/css/*.map
+# build/static/js/*.map
