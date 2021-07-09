@@ -1,0 +1,95 @@
+header{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    background-color: rgb(197, 178, 178);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerInner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+}
+.logo{
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #ece9ea;
+}
+.logo:hover{
+    color: whitesmoke;
+}
+
+nav{
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hamburgerBtn{
+    font-size: 1.3rem;
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 35px;
+    right: 30px;
+    outline: none;
+    background-color: rgb(134, 125, 125);
+    color: whitesmoke;
+}
+.addTransiton{
+    transform: translateX(170px);
+    transition: transform 0.5s ease-in-out;
+}
+.removeTransition{
+    transform: translateX(20px);
+    transition: transform 0.5s ease-in-out;
+}
+
+#sidebarList{
+    background-color: rgb(134, 125, 125);
+    height: 90vh;
+    width: 170px;
+    position: absolute;
+    z-index: 2000;
+    right: 0;
+    top: 0;
+    margin-top: 70px;
+}
+.navBig{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    font-weight: bold;
+}
+
+.navBigLink{
+   cursor: pointer;
+   color: white;
+   text-decoration: none !important;
+}
+
+.navSmall{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    margin: auto;
+    height: 40%;
+    margin-top: 50px;
+    width: 80%;
+}
+.navSmallLlink{
+    cursor: pointer;
+    color: whitesmoke;
+    padding-bottom: 5px;
+}
+
+.navRight{
+    justify-content: flex-end;
+}
