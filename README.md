@@ -36,6 +36,7 @@
 ## 💻 Sobre o projeto
 
 ❗ O jogo Sintonia foi criado para ajudar casais nos momentos de ócio, ou apenas para ter uma noite um pouco mais animada. Com o jogo Sintonia espera-se que os casais se conheçam melhor, discutam pontos importantes das suas vidas ou apenas quebre o gelo para uma noite mais leve. Jogo Indicado para casais recentes ou para casais de longa data, aproveitem :)
+- 🔗 Vem ver o [jogo](https://sintonia-jogo-casais.herokuapp.com/) rodando! 
 
 ## Projeto desenvolvido para fins não profissionais.
 
