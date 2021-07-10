@@ -13,6 +13,8 @@ import reportWebVitals from './reportWebVitals';
 import Main from "./containers/Main";
 import Home from "./containers/Home";
 import Quiz from "./containers/Quiz";
+import About from "./containers/About";
+import Contact from "./containers/Contact";
 
 // Styles
 import './assets/css/overwrite.css'
@@ -27,6 +29,8 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/"><Home /></Route>
           <Route path="/quiz" component={Quiz} />
+          <Route path="/sobre" component={About} />
+          <Route path="/contato" component={Contact} />
         </Switch>
       </Main>
     </Router>
