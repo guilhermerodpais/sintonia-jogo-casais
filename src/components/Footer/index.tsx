@@ -22,9 +22,9 @@ function Footer() {
 	// Render
 	// -------------------------------------------------
 	return (
-		<div className={`${style.footer} footer`}>
-           Footer
-		</div>
+		<footer className={`${style.footer} footer`}>
+			Feito com ♥ por Guilherme Pais © 2021
+		</footer>
 	);
 }
 

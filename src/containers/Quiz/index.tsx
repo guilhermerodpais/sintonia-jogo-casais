@@ -80,8 +80,9 @@ function Quiz() {
 		<div className={style.containerQuiz}>
 			<span className={style.mainQuestionCategory}>{getNameCategory(currentQuote.category)}</span>
 			<h1 className={style.mainQuestion}>{currentQuote.text}</h1>
+			<p className={style.mainQuestionCategorySubtitle}>Beba ou responda</p>
 			<button onClick={() => newQuote()} className={style.newMainQuestionButton}>Nova pergunta</button>
-			
+
 			{/* SVG */}
 			<div className={style.containerQuizBottleBackground}><BottleSVG /></div>
 			<div className={style.containerQuizHeartBackground}><HeartSVG /></div>

@@ -14,6 +14,14 @@
   z-index: 9;
 }
 
+.mainQuestionCategorySubtitle {
+  font-family: "Raleway";
+  font-size: 1.2rem;
+  color: #616161;
+  margin-top: 0;
+  z-index: 9;
+}
+
 .newMainQuestionButton {
   border: none;
   font-family: "Raleway";
@@ -42,10 +50,16 @@
 
 .containerQuizHeartBackground {
   position: absolute;
-  right: 10%;
-
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0.6;
+  
   svg {
-    width: 500px;
+    width: 100%;
+    max-width: 700px;
     height: 100%;
     fill: #c3bbb2;
   }
