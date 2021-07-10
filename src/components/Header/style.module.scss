@@ -1,107 +1,113 @@
-.header{
-    grid-area: header;
-    background: transparent;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header {
+  grid-area: header;
+  background: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.headerInner{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 2rem;
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
 }
 
-.logo{
-    font-family: "Vidaloka";
-    font-size: 3rem;
-    cursor: pointer;
-    color: #C25450;
+.logo {
+  font-family: "Vidaloka";
+  font-size: 3rem;
+  cursor: pointer;
+  color: #c25450;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+
+nav {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+
+  a {
+    color: #393632;
+    font-family: "Raleway";
     text-decoration: none;
 
     &:hover {
-        text-decoration: line-through;
+      text-decoration: line-through;
     }
+  }
 }
 
-nav{
-    flex: 0.5;
-    display: flex;
-    justify-content: center;
-
-    a {
-        color: #393632;
-        font-family: "Raleway";
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: line-through;
-        }
-    }
+.containerButtonMobile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.hamburgerBtn{
-    font-size: 1.3rem;
-    position: absolute;
-    bottom: 0;
-    width: 40px;
-    height: 35px;
-    right: 30px;
-    outline: none;
-    background-color: rgb(134, 125, 125);
-    color: whitesmoke;
-}
-.addTransiton{
-    transform: translateX(170px);
-    transition: transform 0.5s ease-in-out;
-}
-.removeTransition{
-    transform: translateX(20px);
-    transition: transform 0.5s ease-in-out;
+.hamburgerBtn {
+  font-size: 1.3rem;
+  width: 40px;
+  height: 35px;
+  outline: none;
+  background-color: transparent;
+  color: #C25450;
+  border: none;
 }
 
-#sidebarList{
-    background-color: rgb(134, 125, 125);
-    height: 90vh;
-    width: 170px;
-    position: absolute;
-    z-index: 2000;
-    right: 0;
-    top: 0;
-    margin-top: 70px;
+.addTransiton {
+  transform: translateX(170px);
+  transition: transform 0.5s ease-in-out;
+  width: 0;
 }
-.navBig{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 70%;
-    font-weight: bold;
+.removeTransition {
+  transform: translateX(20px);
+  transition: transform 0.5s ease-in-out;
+  width: auto;
 }
 
-.navBigLink{
-   cursor: pointer;
-   color: white;
-   text-decoration: none !important;
+#sidebarList {
+  background-color: rgb(134, 125, 125);
+  height: 90vh;
+  width: 170px;
+  position: absolute;
+  z-index: 2000;
+  right: 0;
+  top: 0;
+  margin-top: 70px;
+}
+.navBig {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  font-weight: bold;
 }
 
-.navSmall{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-around;
-    margin: auto;
-    height: 40%;
-    margin-top: 50px;
-    width: 80%;
-}
-.navSmallLlink{
-    cursor: pointer;
-    color: whitesmoke;
-    padding-bottom: 5px;
+.navBigLink {
+  cursor: pointer;
+  color: white;
+  text-decoration: none !important;
 }
 
-.navRight{
-    justify-content: flex-end;
+.navSmall {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.navSmallLink {
+  cursor: pointer;
+  color: #C25450;
+  padding-bottom: 5px;
+}
+
+.navRight {
+  justify-content: flex-end;
 }
