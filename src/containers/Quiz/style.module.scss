@@ -11,6 +11,7 @@
   color: #ff7571;
   font-size: 4rem;
   text-align: center;
+  z-index: 9;
 }
 
 .newMainQuestionButton {
@@ -24,10 +25,28 @@
   padding: 0.3rem 2rem;
   cursor: pointer;
   text-decoration: none;
+  z-index: 9;
 }
 
 .mainQuestionCategory {
   font-family: "Raleway";
-  font-size: 1rem;
+  font-size: 2rem;
   color: #ccb59e;
+  z-index: 9;
+}
+
+.containerQuizBottleBackground {
+  position: absolute;
+  left: -90px;
+}
+
+.containerQuizHeartBackground {
+  position: absolute;
+  right: 10%;
+
+  svg {
+    width: 500px;
+    height: 100%;
+    fill: #c3bbb2;
+  }
 }

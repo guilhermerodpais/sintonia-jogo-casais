@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 
 // Parts
 import questions from "../../utils/questions";
+import { ReactComponent as BottleSVG } from "../../assets/svg/bottleBackground.svg";
+import { ReactComponent as HeartSVG } from "../../assets/svg/angelsBackground.svg";
 
 // Styles
 import style from "./style.module.scss";
@@ -79,6 +81,10 @@ function Quiz() {
 			<span className={style.mainQuestionCategory}>{getNameCategory(currentQuote.category)}</span>
 			<h1 className={style.mainQuestion}>{currentQuote.text}</h1>
 			<button onClick={() => newQuote()} className={style.newMainQuestionButton}>Nova pergunta</button>
+			
+			{/* SVG */}
+			<div className={style.containerQuizBottleBackground}><BottleSVG /></div>
+			<div className={style.containerQuizHeartBackground}><HeartSVG /></div>
 		</div>
 	);
 }
