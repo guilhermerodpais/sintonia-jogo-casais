@@ -1,0 +1,33 @@
+.containerQuiz {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 9rem;
+}
+
+.mainQuestion {
+  font-family: "Marcellus";
+  color: #ff7571;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.newMainQuestionButton {
+  border: none;
+  font-family: "Raleway";
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  background: #ccb59e;
+  color: #fff;
+  border-radius: 0.2rem;
+  padding: 0.3rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mainQuestionCategory {
+  font-family: "Raleway";
+  font-size: 1rem;
+  color: #ccb59e;
+}

@@ -1,39 +1,84 @@
 // Packages
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 // import { useSelector } from "react-redux";
 
-// import style from "./style.module.scss";
+// Parts
+import questions from "../../utils/questions";
+
+// Styles
+import style from "./style.module.scss";
 
 
 function Quiz() {
 	// -------------------------------------------------
 	// States
 	// -------------------------------------------------
-	// const [userCredentials, setUserCredentials] = useState<UserCredentials>({
-	// 	username: "",
-	// 	password: "",
-	// });
-
+	const [currentQuotes, SetCurrentQuotes] = useState([] as any);
+	const [currentQuote, SetCurrentQuote] = useState({
+		category: "",
+		text: "Vamos começar?"
+	});
 	// -------------------------------------------------
 	// Hooks
 	// -------------------------------------------------
-	const { state } = useLocation();
+	const { state }: any = useLocation();
 
 	// -------------------------------------------------
 	// Functions
 	// -------------------------------------------------
-	// const onFetchFirstLogin = async (values: UserCredentials) => {
-	// 	setUserCredentials(values);
-	// };
+	const newQuote = () => {
+		let randonNumber = Math.floor(Math.random() * currentQuotes.length);
+		SetCurrentQuote(currentQuotes[randonNumber]);
+	};
+
+	const getNameCategory = (type: string) => {
+		let response = "";
+		if (type === "cute") {
+			response = "Fofas";
+		}
+		else if (type === "fun") {
+			response = "Divertidas";
+		}
+		else if (type === "hot") {
+			response = "Picantes";
+		}
+		return response;
+	};
+
+	// -------------------------------------------------
+	// Effects
+	// -------------------------------------------------
+
+	useEffect(() => {
+		const { categories } = state;
+		let arr: any = [];
+
+		categories.forEach(function (item: any) {
+			Object.entries(questions).reduce(function (filtered: any, option) {
+				if (option[0] === item) {
+					option[1].map((text: string) => {
+						const obj = { category: item, text }
+						arr.push(obj);
+						return obj;
+					}
+					)
+				}
+				return filtered;
+			}, []);
+
+		});
+		SetCurrentQuotes(arr)
+	}, [state]);
 
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 	return (
-		<div>
-			{console.log('state', state)}
-            <p>teste quiz</p>
+		<div className={style.containerQuiz}>
+			<span className={style.mainQuestionCategory}>{getNameCategory(currentQuote.category)}</span>
+			<h1 className={style.mainQuestion}>{currentQuote.text}</h1>
+			<button onClick={() => newQuote()} className={style.newMainQuestionButton}>Nova pergunta</button>
 		</div>
 	);
 }
