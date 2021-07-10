@@ -35,9 +35,11 @@ export function NavComponent({onClick, navClass, linkClassName, items}: any) {
 	return (
 		<nav className={navClass}>
 			{items.map((section: any)=>
-				<Link to={section}
+				<Link 
+					to={section}
 					className={linkClassName}
-					onClick={onClick}>
+					onClick={onClick}
+				>
 					{section}
 				</Link>
 			)}

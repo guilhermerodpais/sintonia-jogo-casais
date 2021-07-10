@@ -1,5 +1,6 @@
 // Packages
 import React from "react";
+import { useLocation } from 'react-router-dom';
 // import { useSelector } from "react-redux";
 
 // import style from "./style.module.scss";
@@ -17,9 +18,7 @@ function Quiz() {
 	// -------------------------------------------------
 	// Hooks
 	// -------------------------------------------------
-	// const isFirstAccess = useSelector(
-	// 	(state: IRootState) => state.accessController.firstAccess
-	// );
+	const { state } = useLocation();
 
 	// -------------------------------------------------
 	// Functions
@@ -33,6 +32,7 @@ function Quiz() {
 	// -------------------------------------------------
 	return (
 		<div>
+			{console.log('state', state)}
             <p>teste quiz</p>
 		</div>
 	);

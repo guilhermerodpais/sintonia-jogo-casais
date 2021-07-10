@@ -34,7 +34,7 @@ function Header() {
             <div className={style.headerInner}>
                 
                 { width > 1000 && <Navbar items={["sobre"]} />}
-				<Link to="Home" className={`${style.logo} nav-link`}>	 
+				<Link to="/" className={`${style.logo} nav-link`}>	 
                       Sintonia
                 </Link>
 				{ width > 1000 && <Navbar items={["contato"]} />}

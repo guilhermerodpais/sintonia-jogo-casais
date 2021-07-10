@@ -1,5 +1,6 @@
 // Packages
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // import { useSelector } from "react-redux";
 
 // Styles
@@ -28,7 +29,6 @@ function Home() {
 		imagePath: OriginalBanner,
 
 	});
-	const [selectedCategorie, setSelectedCategorie] = useState("");
 	const [selectedCategories, setSelectedCategories] = useState([] as any);
 
 	// -------------------------------------------------
@@ -50,19 +50,24 @@ function Home() {
 	const handleGetCategoryDetails = (type: string) => {
 		let image = OriginalBanner;
 		let title = "";
+		let icon = <CuteSVG className={style.selectionContainerBoxButtonSVG} />;
+
 		if(type === "cute") {
 			image = CuteBanner;
 			title = "Fofas";
+			icon = <CuteSVG className={style.selectionContainerBoxButtonSVG} />;
 		}
 		else if(type === "fun") {
 			image = FunBanner;
 			title = "Divertidas";
+			icon = <FunSVG className={style.selectionContainerBoxButtonSVG} />;
 		}
 		else if(type === "hot") {
 			image = HotBanner;
 			title = "Picantes";
+			icon = <HotSVG className={style.selectionContainerBoxButtonSVG} />;
 		}
-		  return { image, title};
+		  return { image, title, icon };
 	};
 
 	const onCategoryHover = async (type: string) => {
@@ -90,18 +95,20 @@ function Home() {
 		<>
             <div className={style.imageContainer}>
 				<div  className={style.imageContainerBox}>
-					<img src={hoveredCategory.imagePath} className={style.imageContainerInfo} />
+					<img src={hoveredCategory.imagePath} className={style.imageContainerInfo} alt="banner"/>
 					<h2 className={style.imageTitleContainerInfo} >{hoveredCategory.title}</h2>
 				</div>
 			</div>
 			<div className={style.contentHomeContainer}>
 				<div className={style.titleContainerBox}>
-					<img src={HomeTitle} className={style.titleContainerInfo} />
+					<img src={HomeTitle} className={style.titleContainerInfo} alt="title" />
 					<p>Selecione um ou mais temas para seguir</p>
 				</div>
 				<div  className={style.selectionContainerBox}>
 				{categories.map((item: string) => {
-					const title = handleGetCategoryDetails(item).title;
+					const getDetails = handleGetCategoryDetails(item);
+					const title = getDetails.title;
+					const icon = getDetails.icon;
 					const isSelected = handleChangeCategoryExists(item);
 					return(
 					<Button 
@@ -111,9 +118,19 @@ function Home() {
 						title={title}
 						selectedItem={!!isSelected}
 					>
-						<CuteSVG className={style.selectionContainerBoxButtonSVG} />
+						{icon}
 					</Button>
 				)})}
+				<Link 
+				    to={{
+						pathname: "/quiz",
+						search: "?sort=name",
+						state: { categories: selectedCategories }
+				    }}
+					className={`${style.buttonStart} ${selectedCategories.length === 0 ? style.disabled: ""}`}
+				>
+					Iniciar
+				</Link>
 				</div>
 			</div>
 		</>

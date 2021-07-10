@@ -83,6 +83,27 @@
     color: #CCB59E;
 }
 
-.selectionContainerBoxButtonSelected{
-    background: red;
+.buttonStart{
+    border: none;
+    font-family: "Raleway";
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background: #CCB59E;
+    color: #fff;
+    border-radius: 0.2rem;
+    padding: 0.3rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        background: #FFF;
+        color: #CCB59E;
+    }
 }
+
+.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+
