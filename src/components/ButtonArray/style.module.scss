@@ -1,0 +1,39 @@
+.button{
+    width: 100%;
+    display: flex;
+    background: transparent;
+    border: 2px solid #CCB59E;
+    color: #CCB59E;
+    font-family: "Raleway";
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background: #CCB59E;
+        color: #FFF;
+        border-color: #CCB59E;
+
+        svg {
+            color: #FFF;
+        }
+    }
+
+    svg {
+        margin-right: 1rem;
+        margin-left: 0.5rem;
+        color: #CCB59E;
+    }
+}
+
+.buttonSelected{
+    background: #CCB59E;
+    color: #FFF;
+    border-color: #CCB59E;
+
+    svg {
+        color: #FFF;
+    }
+}

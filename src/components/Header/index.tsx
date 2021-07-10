@@ -30,14 +30,14 @@ function Header() {
 	// Render
 	// -------------------------------------------------
 	return (
-		<header className={style.header}>
+		<header className={`${style.header} header`}>
             <div className={style.headerInner}>
                 
                 { width > 1000 && <Navbar items={["sobre"]} />}
 				<Link to="Home" className={`${style.logo} nav-link`}>	 
                       Sintonia
                 </Link>
-				{ width > 1000 && <Navbar items={["contato"]} navClass={style.navRight} />}
+				{ width > 1000 && <Navbar items={["contato"]} />}
 				{ width < 1000 && <SmallScreensNavbar /> }
             </div>
         </header>

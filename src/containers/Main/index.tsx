@@ -1,9 +1,6 @@
 // Packages
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import { useSelector } from "react-redux";
-
-// import style from "./style.module.scss";
 
 // Types
 import {  IProps } from "./types";
@@ -12,29 +9,25 @@ import {  IProps } from "./types";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
+// Styles
+import style from "./style.module.scss";
+
 const Main: React.FC<IProps> = ({ children }) => {
 	// -------------------------------------------------
 	// States
 	// -------------------------------------------------
-	// const [userCredentials, setUserCredentials] = useState<UserCredentials>({
-	// 	username: "",
-	// 	password: "",
-	// });
 
 	// -------------------------------------------------
 	// Hooks
 	// -------------------------------------------------
-	// const isFirstAccess = useSelector(
-	// 	(state: IRootState) => state.accessController.firstAccess
-	// );
 
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 	return (
-		<div>
+		<div className={style.wrapper}>
 			<Header />
-			{children}
+			<div className={style.content}>{children}</div>
 			<Footer />
 		</div>
 	);

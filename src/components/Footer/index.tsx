@@ -1,41 +1,31 @@
 // Packages
 import React from "react";
-// import { useSelector } from "react-redux";
 
-// import style from "./style.module.scss";
+// Styles
+import style from "./style.module.scss";
 
 
-function Quiz() {
+function Footer() {
 	// -------------------------------------------------
 	// States
 	// -------------------------------------------------
-	// const [userCredentials, setUserCredentials] = useState<UserCredentials>({
-	// 	username: "",
-	// 	password: "",
-	// });
 
 	// -------------------------------------------------
 	// Hooks
 	// -------------------------------------------------
-	// const isFirstAccess = useSelector(
-	// 	(state: IRootState) => state.accessController.firstAccess
-	// );
 
 	// -------------------------------------------------
 	// Functions
 	// -------------------------------------------------
-	// const onFetchFirstLogin = async (values: UserCredentials) => {
-	// 	setUserCredentials(values);
-	// };
 
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 	return (
-		<div>
+		<div className={`${style.footer} footer`}>
            Footer
 		</div>
 	);
 }
 
-export default Quiz;
+export default Footer;

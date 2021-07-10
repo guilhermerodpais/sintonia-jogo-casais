@@ -1,0 +1,87 @@
+// Image Banner
+.imageContainer {
+}
+
+.imageContainerBox{
+    height: calc(100vh - 200px);
+    position: relative;
+}
+
+.imageContainerInfo {
+    height: 100%;
+}
+
+.imageTitleContainerInfo {
+    font-family: "Marcellus";
+    color: #FF7571;
+    font-size: 4rem;
+    position: absolute;
+    bottom: -32px;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+// Content Home
+.contentHomeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleContainerBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    p {
+        font-family: "Raleway";
+        color: #616161;
+    }
+}
+
+.titleContainerInfo {
+    height: calc(100vh - 570px);
+}
+
+// Selection Buttons
+.selectionContainerBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selectionContainerBoxButton{
+    width: 100%;
+    display: flex;
+    background: transparent;
+    border: 2px solid #CCB59E;
+    color: #CCB59E;
+    font-family: "Raleway";
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background: #DED1C4;
+        color: #FFF;
+        border-color: #DED1C4;
+
+        svg {
+            color: #FFF;
+        }
+    }
+}
+
+.selectionContainerBoxButtonSVG{
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+    color: #CCB59E;
+}
+
+.selectionContainerBoxButtonSelected{
+    background: red;
+}
