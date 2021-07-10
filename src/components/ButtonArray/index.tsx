@@ -4,11 +4,10 @@ import React, { useState } from "react";
 // Styles
 import style from "./style.module.scss";
 
-function Button({onClick, name, onHover, children, title, selectedItem, array}: any) {
+function Button({onClick, name, onHover, children, title, selectedItem}: any) {
 	// -------------------------------------------------
 	// States
 	// -------------------------------------------------
-    let [selected, setSelected ] = useState(false);
 
 	// -------------------------------------------------
 	// Hooks
@@ -18,13 +17,6 @@ function Button({onClick, name, onHover, children, title, selectedItem, array}: 
 	// Functions
 	// -------------------------------------------------
 
-	const handleIsSelected = (name: string) => array.find((e: any)=>{
-		console.log('array', array); 
-		console.log('e', e);
-		console.log('name', name);
-		console.log('----');
-		return (e === name)});
-
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
@@ -33,7 +25,7 @@ function Button({onClick, name, onHover, children, title, selectedItem, array}: 
 			name={name}
 			onMouseEnter={onHover}
 			onClick={onClick}
-			className={`${style.button} ${!!handleIsSelected(selectedItem) ? style.buttonSelected : ""}`}
+			className={`${style.button} ${selectedItem ? style.buttonSelected : ""}`}
 		>
 			{children}
 			{title}

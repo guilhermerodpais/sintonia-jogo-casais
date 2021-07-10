@@ -42,7 +42,8 @@
 }
 
 .titleContainerInfo {
-    height: calc(100vh - 570px);
+    max-width: 588px;
+    width: 100%;
 }
 
 // Selection Buttons

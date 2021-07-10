@@ -39,6 +39,11 @@ function Home() {
 	// );
 
 	// -------------------------------------------------
+	// Utils
+	// -------------------------------------------------
+	const categories = ["cute", "fun", "hot"];
+
+	// -------------------------------------------------
 	// Functions
 	// -------------------------------------------------
 
@@ -60,17 +65,15 @@ function Home() {
 		  return { image, title};
 	};
 
-	const onCategoryHover = async (e: any) => {
-		const type = e.target.name;
+	const onCategoryHover = async (type: string) => {
 		const getDetails = handleGetCategoryDetails(type);
-		setHoveredCategory({imagePath: getDetails.image , title: getDetails.title, type: e.target.name});
+		setHoveredCategory({imagePath: getDetails.image , title: getDetails.title, type});
 	};
 
 	const handleChangeCategoryExists = (name: string) => selectedCategories.find((e: any)=>(e === name));
 
 	const handleChangeCategory = (name: string) => {
 		const existsInArray = handleChangeCategoryExists(name);
-		setSelectedCategorie(name);
 		if(!!existsInArray) {
 			// Remove
 			setSelectedCategories(selectedCategories.filter((e: any)=>(e !== name)));
@@ -97,36 +100,20 @@ function Home() {
 					<p>Selecione um ou mais temas para seguir</p>
 				</div>
 				<div  className={style.selectionContainerBox}>
-				<Button 
-					name="cute" 
-					onHover={(e: any) => onCategoryHover(e)}
-					onClick={(e: any) => handleChangeCategory(e.target.name)}
-					title="Fofas"
-					selectedItem={selectedCategorie}
-					array={selectedCategories}
-				>
-					<CuteSVG className={style.selectionContainerBoxButtonSVG} />
-				</Button>
-				<Button 
-					name="fun" 
-					onHover={(e: any) => onCategoryHover(e)}
-					onClick={(e: any) => handleChangeCategory(e.target.name)}
-					title="Divertidas"
-					selectedItem={selectedCategorie}
-					array={selectedCategories}
-				>
-					<FunSVG className={style.selectionContainerBoxButtonSVG} />
-				</Button>
-				<Button 
-					name="hot" 
-					onHover={(e: any) => onCategoryHover(e)}
-					onClick={(e: any) => handleChangeCategory(e.target.name)}
-					title="Picantes"
-					selectedItem={selectedCategorie}
-					array={selectedCategories}
-				>
-					<HotSVG className={style.selectionContainerBoxButtonSVG} />
-				</Button>
+				{categories.map((item: string) => {
+					const title = handleGetCategoryDetails(item).title;
+					const isSelected = handleChangeCategoryExists(item);
+					return(
+					<Button 
+						name={item}
+						onHover={() => onCategoryHover(item)}
+						onClick={() => handleChangeCategory(item)}
+						title={title}
+						selectedItem={!!isSelected}
+					>
+						<CuteSVG className={style.selectionContainerBoxButtonSVG} />
+					</Button>
+				)})}
 				</div>
 			</div>
 		</>
